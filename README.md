@@ -20,7 +20,9 @@ explicitly created?
 
 # tutorial11-adpro Part 2 Reflection
 
-1. What is the difference between Rolling Update and Recreate deployment strategy?
+1. What is the difference between Rolling Update and Recreate deployment strategy? <br>
+ The Rolling Update strategy essentially allows a deployment update to take place with zero downtime. This strategy would allow a much smoother transition, greatly reducing the downtime for the new version to take place. On the other hand, the Recreate strategy essentially initiates a dummy deployment, shutting down the current version. During this downtime, the new version will take its place, allowing the app to redeploy once again.
+ 
 2. Try deploying the Spring Petclinic REST using Recreate deployment strategy and document
 your attempt.
 3.  Prepare different manifest files for executing Recreate deployment strategy
