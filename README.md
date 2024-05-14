@@ -28,7 +28,32 @@ The Rolling Update strategy essentially allows a deployment update to take place
  
 2. Try deploying the Spring Petclinic REST using Recreate deployment strategy and document
 your attempt.
-3.  Prepare different manifest files for executing Recreate deployment strategy
+
+- I first began by creating the spring-petclinic-rest deployment: <br>
+<img width="637" alt="image" src="https://github.com/PascalPahlevi/tutorial11-adpro/assets/143638456/9eb82134-b81d-4eb4-bdce-e4757988cfa5">
+
+- Afterwards, I had to expose the spring-petclinic-rest services after quickly checking the logs: <br>
+<img width="626" alt="image" src="https://github.com/PascalPahlevi/tutorial11-adpro/assets/143638456/8993d87d-3caa-4be1-8164-26a26e83e7a3">
+<img width="614" alt="image" src="https://github.com/PascalPahlevi/tutorial11-adpro/assets/143638456/4b054734-b52b-4024-a545-64b73465490c">
+
+- Then, I created the manifest files for both the deployment and services of spring-petclinic-rest: <br>
+<img width="621" alt="image" src="https://github.com/PascalPahlevi/tutorial11-adpro/assets/143638456/30ec1434-5ab5-4c6c-bed6-096ee88476bf">
+
+- To apply the Recreate deployment strategy, I directly edited the yaml file, changing its strategy from Rolling Update into Recreate, additionally also making sure to add 4 replicas to the deployment: <br>
+<img width="356" alt="image" src="https://github.com/PascalPahlevi/tutorial11-adpro/assets/143638456/d8e2e39f-5606-4d6d-ad88-37f2da77e5f8">
+
+- Then, I deleted the initial minikube and started a new one, applying both of the created deployment and service manifest files.
+<img width="623" alt="image" src="https://github.com/PascalPahlevi/tutorial11-adpro/assets/143638456/7995a546-66bf-48f6-b56b-5d037057beea">
+<img width="481" alt="image" src="https://github.com/PascalPahlevi/tutorial11-adpro/assets/143638456/5af4c134-80c7-45c0-b74d-d8aadd1ded2a">
+
+- Finally, I set a new image, making sure it is the new one, and then the Recreate deployment strategy was applied. Also shown below are the results: <br>
+<img width="623" alt="image" src="https://github.com/PascalPahlevi/tutorial11-adpro/assets/143638456/a812b985-c2e0-47bf-8fd6-deefe31009d9">
+<img width="629" alt="image" src="https://github.com/PascalPahlevi/tutorial11-adpro/assets/143638456/fb320b5c-74e8-428a-8e41-d07b37c47e3a">
+
+3.  Prepare different manifest files for executing Recreate deployment strategy <br>
+
+The manifest files for executing this deployment strategy are `recreate-deployment.yaml` and `recreate-service.yaml`
+
 4. What do you think are the benefits of using Kubernetes manifest files? Recall your experience
 in deploying the app manually and compare it to your experience when deploying the same app
 by applying the manifest files (i.e., invoking `kubectl apply -f` command) to the cluster.
